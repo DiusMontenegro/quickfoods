@@ -2,12 +2,11 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 
+import { placeholderImage } from '~/constants';
+import { ProductType } from '~/types';
+
 interface ProductProps {
-    product: {
-        name: string;
-        image: string;
-        price: number;
-    };
+    product: ProductType;
 }
 
 const Product = ({ product }: ProductProps) => {
@@ -15,7 +14,7 @@ const Product = ({ product }: ProductProps) => {
 
     return (
         <View className="rounded-2xl bg-white p-2">
-            <Image source={{ uri: image }} className="aspect-square w-full" />
+            <Image source={{ uri: image || placeholderImage }} className="aspect-square w-full" />
             <Text className="my-1 text-[18px] font-bold">{name}</Text>
             <Text className="text-base font-semibold text-[#2f95dc]">${price}</Text>
         </View>
