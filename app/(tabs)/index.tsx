@@ -1,14 +1,18 @@
 /* eslint-disable prettier/prettier */
-import { Link } from 'expo-router';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
+
+import products from '~/assets/data/products';
 
 const Home = () => {
+    const product = products[0];
+    const { image, name, price } = product;
+
     return (
-        <View>
-            <Text className="text-4xl">Home</Text>
-            <Link href={{ pathname: '/users/[id]', params: { id: 1 } }}> Go to user 1</Link>
-            <Link href={{ pathname: '/users/[id]', params: { id: 2 } }}> Go to user 2</Link>
+        <View className="rounded-2xl bg-white p-2">
+            <Image source={{ uri: image }} className="aspect-square w-full" />
+            <Text className="my-1 text-[18px] font-bold">{name}</Text>
+            <Text className="text-base font-semibold text-[#2f95dc]">${price}</Text>
         </View>
     );
 };
