@@ -2,7 +2,7 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 
-import products from '~/assets/data/products';
+import { products } from '~/assets/data/products';
 import Product from '~/components/shared/Product';
 
 export default function Menu() {

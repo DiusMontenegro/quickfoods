@@ -61,4 +61,6 @@ const products = [
     },
 ];
 
-export default products;
+const sizes = ['S', 'M', 'L', 'XL'];
+
+export { products, sizes };
